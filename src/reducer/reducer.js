@@ -75,7 +75,7 @@ function reducer (prevState = initialState, action) {
     const newState = Object.assign({}, prevState);
     newState.articles = [];
     newState.selectedArticle = {};
-    newState.selectedComments = {},
+    newState.selectedComments = {};
     newState.loading = false;
     newState.error = action.error;
     return newState;
@@ -99,7 +99,7 @@ function reducer (prevState = initialState, action) {
     const newState = Object.assign({}, prevState);
     newState.articles = [];
     newState.selectedArticle = {};
-    newState.selectedComments = {},
+    newState.selectedComments = {};
     newState.loading = false;
     newState.error = action.error;
     return newState;
