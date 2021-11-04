@@ -2,17 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Comment extends React.Component {
-    render () {
-        const timestamp = Number(this.props.comment.created_at);
-        return (
-            <div className="postedComment">
-                <h2>{this.props.comment.created_by} says:</h2>
-                <span className="commentBody">{this.props.comment.body}</span><br />
-                <span className="commentInfo">Posted at {timeConverter(timestamp)}<br />
-                Votes: {this.props.comment.votes} </span>
-            </div>
-        );
-    }
+  render () {
+    return (
+      <div className="postedComment">
+        <h2>{this.props.comment.author} says:</h2>
+        <span className="commentBody">{this.props.comment.body}</span><br />
+        <span className="commentInfo">Posted at {timeConverter(this.props.comment.created_at)}<br />
+        Votes: {this.props.comment.votes} </span>
+      </div>
+    );
+  }
 }
 
 function timeConverter (UNIX_timestamp) {
@@ -28,7 +27,7 @@ function timeConverter (UNIX_timestamp) {
 }
 
 Comment.proptypes = {
-    comment: PropTypes.object.isRequired
+  comment: PropTypes.object.isRequired
 };
 
 export default Comment;

@@ -14,13 +14,15 @@ class ArticleList extends React.Component {
     return (
       <div className="columns">
         <div className="column is-three-quarters" id='ArticleList'>
-          {this.props.articles.map(article => <ArticleCard title={article.title}
-                       author={article.created_by}
-                       votes={article.votes} 
-                       key={article.title}
-                       topic={article.belongs_to} 
-                       article_id={article._id}
-          />)}
+          {this.props.articles.map(article => (
+          <ArticleCard
+            title={article.title}
+            author={article.author}
+            votes={article.votes}
+            key={article.title}
+            topic={article.topic}
+            article_id={article.article_id}
+          />))}
         </div>
         <Profile />
       </div>
