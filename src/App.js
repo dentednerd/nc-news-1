@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Navbar from './components/Navbar';
+import './style.css';
 
 class App extends React.Component {
   render () {

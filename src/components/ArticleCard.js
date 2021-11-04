@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 const ArticleCard = function (props) {
+  console.log("article ID: ", props.article_id);
   return (
     <div className='box'>
       <article className="media">
