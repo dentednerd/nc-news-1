@@ -1,4 +1,4 @@
 module.exports = {
-  ROOT: 'https://northcoders-news-dentednerd-v2.herokuapp.com/api',
+  ROOT: 'https://nc-news-sql-dentednerd.herokuapp.com/api',
   USERNAME: 'northcoder'
 };
