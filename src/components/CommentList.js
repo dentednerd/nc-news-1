@@ -11,9 +11,7 @@ class CommentList extends React.Component {
   render () {
     return (
       <div>
-        {this.props.selectedComments.map((comment) => {
-          return <Comment key={comment.comment_id} comment={comment}/>;
-        })}
+        {this.props.selectedComments.map((comment) => <Comment key={comment.comment_id} comment={comment}/>)}
       </div>
     );
   }
@@ -21,7 +19,7 @@ class CommentList extends React.Component {
 
 export default CommentList;
 
-CommentList.proptypes = {
+CommentList.propTypes = {
     selectedComments: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired
 };

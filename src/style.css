@@ -6,7 +6,7 @@ html, body {
 }
 
 a {
-    color: #222;
+  color: #222;
 }
 
 .title {
@@ -63,7 +63,7 @@ nav h1 {
   overflow:hidden;
 }
 
-.columns {
+main.columns {
   padding: 0 20px;
 }
 
@@ -81,42 +81,22 @@ h2, h3 {
   font-family: 'Zilla Slab', serif;
 }
 
-#ArticleList .title:not(:last-child), #TopicPage .title:not(:last-child) {
+/* #ArticleList .title:not(:last-child), #TopicPage .title:not(:last-child) {
     margin-bottom:0;
-}
+} */
 
 .topic {
   text-transform:capitalize;
 }
 
-.media-left, .vote {
-  background-color:#2C3551;
-  width:10%;
-  padding:10px;
-  font-size:3vw;
-  font-weight:bold;
-  color:#fff;
-  text-align:center;
-  display: flex;
-  flex-flow:row nowrap;
-  justify-content:space-around;
-  align-items:center;
-}
-
-.media-left:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-
 /* Profile */
 
 .profileWrap {
-  display:flex;
+  display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  align-items:center;
-  margin-bottom:20px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .avatar {
@@ -153,49 +133,52 @@ h2, h3 {
 }
 
 .vote {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2C3551;
+  max-width: 48px;
   margin-right: 10px;
-  min-height: 100%;
-  /* display:table-cell; */
-
 }
 
-.voteCount {
-  margin: 0 auto;
-  height:100%;
-  padding-bottom: 5px;
+span.vote-count {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
 }
 
-.voteButton {
+.vote-button-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
 }
 
-.voteButton button, .submitButton {
+.vote-button-container button, .submitButton {
   background-color:#2C3551;
-  margin: 5px;
-  padding: 5px;
-  border:none;
+  padding: 4px;
   font-size: 24px;
-  font-weight:bold;
+  font-weight: bold;
   color: #fff;
+  border: none;
 }
 
-.voteButton button:hover, .submitButton:hover {
+.vote-button-container button:hover, .submitButton:hover {
   background-color:#77f;
 }
 
 .postedComment {
-  margin: 10px 0;
   width: 50%;
-  border-radius: 5px;
-  border: solid 1px #aaa;
-  box-shadow: 1px 1px 3px #aaa;
   background-color:#fff;
-  padding:10px;
-  overflow:hidden;
-  word-wrap:break-word;
+  border: solid 1px #aaa;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #aaa;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .newComment {

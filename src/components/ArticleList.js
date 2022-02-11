@@ -6,31 +6,31 @@ import Profile from './Profile';
 import * as actions from '../actions/actions';
 
 class ArticleList extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.fetchArticles();
   }
 
-  render () {
+  render() {
     return (
-      <div className="columns">
+      <main className="columns">
         <div className="column is-three-quarters" id='ArticleList'>
           {this.props.articles.map(article => (
-          <ArticleCard
-            title={article.title}
-            author={article.author}
-            votes={article.votes}
-            key={article.title}
-            topic={article.topic}
-            article_id={article.article_id}
-          />))}
+            <ArticleCard
+              title={article.title}
+              author={article.author}
+              votes={article.votes}
+              key={article.title}
+              topic={article.topic}
+              article_id={article.article_id}
+            />))}
         </div>
         <Profile />
-      </div>
+      </main>
     );
   }
 }
 
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     fetchArticles: () => {
       dispatch(actions.fetchArticles());
@@ -38,10 +38,10 @@ function mapDispatchToProps (dispatch) {
   };
 }
 
-function MapStateToProps (state) {
+function MapStateToProps(state) {
   return {
     articles: state.articles,
-    loading :state.loading
+    loading: state.loading
   };
 }
 
@@ -50,4 +50,4 @@ ArticleList.propTypes = {
   loading: PropTypes.bool.isRequired
 }
 
-export default connect(MapStateToProps, mapDispatchToProps) (ArticleList);
+export default connect(MapStateToProps, mapDispatchToProps)(ArticleList);

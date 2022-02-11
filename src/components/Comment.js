@@ -26,7 +26,7 @@ function timeConverter (UNIX_timestamp) {
   return time;
 }
 
-Comment.proptypes = {
+Comment.propTypes = {
   comment: PropTypes.object.isRequired
 };
 

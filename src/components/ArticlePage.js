@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as actions from '../actions/actions';
+
 import ArticleTitleBar from './ArticleTitleBar';
 import ArticleText from './ArticleText';
 import VoteButton from './VoteButton';
 import NewComment from './NewComment';
 import CommentList from './CommentList';
 import Profile from './Profile';
-import {connect} from 'react-redux';
-import * as actions from '../actions/actions';
 
 class ArticlePage extends React.Component {
   componentDidMount () {
@@ -17,7 +18,7 @@ class ArticlePage extends React.Component {
 
   render () {
     return (
-      <div className="articlePage columns">
+      <main className="articlePage columns">
         <div className="column is-three-quarters">
           <ArticleTitleBar
             title={this.props.selectedArticle.title}
@@ -38,12 +39,12 @@ class ArticlePage extends React.Component {
             />
           </div>
           <hr />
-            <CommentList
-              selectedComments={this.props.selectedComments}
-            />
+          <CommentList
+            selectedComments={this.props.selectedComments}
+          />
         </div>
         <Profile />
-      </div>
+      </main>
     );
   }
 }

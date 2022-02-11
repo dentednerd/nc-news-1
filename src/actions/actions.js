@@ -213,10 +213,12 @@ export function fetchTopicsError(error) {
 
 // incrementArticleVotes
 export function articleVoteUp(id) {
-  // add 1 to voteCount
+  // add 1 to vote-count
   return function (dispatch) {
     dispatch(articleVoteUpRequest());
-    axios.put(`${ROOT}/articles/${id}?vote=up`)
+    axios.patch(`${ROOT}/articles/${id}`, {
+      inc_votes: 1
+    })
       .then(res => {
         dispatch(articleVoteUpSuccess(res));
       })
@@ -248,10 +250,12 @@ export function articleVoteUpError(error) {
 
 // decrementVotes
 export function articleVoteDown(id) {
-  // take 1 from voteCount
+  // take 1 from vote-count
   return function (dispatch) {
     dispatch(articleVoteDownRequest());
-    axios.put(`${ROOT}/articles/${id}?vote=down`)
+    axios.patch(`${ROOT}/articles/${id}`, {
+      inc_votes: -1
+    })
       .then(res => {
         dispatch(articleVoteDownSuccess(res));
       })

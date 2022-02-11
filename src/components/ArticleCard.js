@@ -4,22 +4,18 @@ import { Link } from 'react-router-dom';
 
 const ArticleCard = function ({ votes, topic, article_id, title, author }) {
   return (
-    <div className='box'>
-      <article className="media">
-        <div className="media-left">
-          <span className="voteCount">{votes}</span>
-        </div>
-        <div className="media-content">
-          <div className="content">
-            <span className="topic">{topic}</span>
-            <Link to={'/articles/' + article_id}>
-              <h2 className="title is-3">{title}</h2>
-              <span className="subtitle is-6">by {author}</span>
-            </Link>
-          </div>
-        </div>
-      </article>
-    </div>
+    <article className="box columns my-4" style={{ marginBottom: "24px" }}>
+      <div className="vote column is-1">
+        <span className="vote-count">{votes}</span>
+      </div>
+      <div className="column">
+        <span className="topic">{topic}</span>
+        <Link to={'/articles/' + article_id}>
+          <h2 className="title">{title}</h2>
+          <span className="subtitle">by {author}</span>
+        </Link>
+      </div>
+    </article>
   );
 };
 
