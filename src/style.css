@@ -29,12 +29,12 @@ nav {
   height: 60px;
   box-shadow: 1px 1px 5px #000;
   color:#FFF;
-} 
+}
 
 nav .topicLink {
   background-color:rgba(255,255,255,1);
   padding:1vw;
-  margin:0 1vw; 
+  margin:0 1vw;
   min-width: 10vw !important;
   font-family: 'Zilla Slab', serif;
   font-size: calc(6px + 1vw);
@@ -69,11 +69,11 @@ nav h1 {
 
 /* ArticleList */
 
- .profile {
+.profile {
   padding:20px;
   margin: 10px;
   font-size:12px;
-} 
+}
 
 /* ArticleCard  */
 
@@ -156,7 +156,7 @@ h2, h3 {
   margin-right: 10px;
   min-height: 100%;
   /* display:table-cell; */
-  
+
 }
 
 .voteCount {
@@ -180,7 +180,7 @@ h2, h3 {
   font-size: 24px;
   font-weight:bold;
   color: #fff;
-} 
+}
 
 .voteButton button:hover, .submitButton:hover {
   background-color:#77f;

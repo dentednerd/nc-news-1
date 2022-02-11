@@ -1,9 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import ArticleCard from './ArticleCard';
 import Profile from './Profile';
 import * as actions from '../actions/actions';
-
 
 class ArticleList extends React.Component {
   componentDidMount () {
@@ -43,6 +43,11 @@ function MapStateToProps (state) {
     articles: state.articles,
     loading :state.loading
   };
+}
+
+ArticleList.propTypes = {
+  articles: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired
 }
 
 export default connect(MapStateToProps, mapDispatchToProps) (ArticleList);
