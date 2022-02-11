@@ -10,7 +10,6 @@ import ArticleList from './components/ArticleList';
 import ArticlePage from './components/ArticlePage';
 import TopicPage from './components/TopicPage';
 import reducer from './reducer/reducer';
-import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 const history = createBrowserHistory();
@@ -28,5 +27,3 @@ ReactDOM.render(
       </App>
     </Router>
   </Provider>, document.getElementById('root'));
-
-registerServiceWorker();
