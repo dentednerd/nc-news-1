@@ -19,28 +19,28 @@ class ArticlePage extends React.Component {
     return (
       <div className="articlePage columns">
         <div className="column is-three-quarters">
-          <ArticleTitleBar 
+          <ArticleTitleBar
             title={this.props.selectedArticle.title}
-            author={this.props.selectedArticle.created_by} 
+            author={this.props.selectedArticle.author}
           />
-          <ArticleText 
-            body={this.props.selectedArticle.body} 
+          <ArticleText
+            body={this.props.selectedArticle.body}
           />
           <hr />
           <div className="voteAndComment">
-            <VoteButton 
-              votes={this.props.selectedArticle.votes} 
+            <VoteButton
+              votes={this.props.selectedArticle.votes}
               id={this.props.match.params.article_id}
             />
-            <NewComment 
+            <NewComment
               postComment={this.props.addCommentsByArticleID}
-              article_id={this.props.match.params.article_id} 
+              article_id={this.props.match.params.article_id}
             />
           </div>
           <hr />
-            <CommentList 
-              selectedComments={this.props.selectedComments} 
-            />               
+            <CommentList
+              selectedComments={this.props.selectedComments}
+            />
         </div>
         <Profile />
       </div>
@@ -54,7 +54,7 @@ function mapDispatchToProps (dispatch) {
       dispatch(actions.fetchArticlesByID(id));
     },
     fetchCommentsByArticleID: (id) => {
-      dispatch(actions.fetchCommentsByArticleID(id));  
+      dispatch(actions.fetchCommentsByArticleID(id));
     },
     addCommentsByArticleID: (id, data) => {
         dispatch(actions.addCommentsByArticleID(id, data));

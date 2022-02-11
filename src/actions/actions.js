@@ -36,13 +36,48 @@ export function fetchArticlesError(error) {
   };
 }
 
+// fetchArticlesByTopic
+export function fetchArticlesByTopic(topic) {
+  return function (dispatch) {
+    dispatch(fetchArticlesByTopicRequest(topic));
+    axios.get(`${ROOT}/articles?topic=${topic}`)
+      .then(res => {
+        dispatch(fetchArticlesByTopicSuccess(res.data.articles));
+      })
+      .catch(err => {
+        dispatch(fetchArticlesByTopicError(err));
+      });
+  };
+}
+
+export function fetchArticlesByTopicRequest(topic) {
+  return {
+    type: types.FETCH_ARTICLES_BY_TOPIC_REQUESTS,
+    topic: topic
+  };
+}
+
+export function fetchArticlesByTopicSuccess(articles) {
+  return {
+    type: types.FETCH_ARTICLES_BY_TOPIC_SUCCESS,
+    payload: articles
+  };
+}
+
+export function fetchArticlesByTopicError(error) {
+  return {
+    type: types.FETCH_ARTICLES_BY_TOPIC_ERROR,
+    payload: error
+  };
+}
+
 // fetchArticlesByID
 export function fetchArticlesByID(id) {
   return function (dispatch) {
     dispatch(fetchArticlesByIDRequest(id));
     axios.get(`${ROOT}/articles/${id}`)
       .then(res => {
-        dispatch(fetchArticlesByIDSuccess(res.data));
+        dispatch(fetchArticlesByIDSuccess(res.data.article));
       })
       .catch(err => {
         dispatch(fetchArticlesByIDError(err));

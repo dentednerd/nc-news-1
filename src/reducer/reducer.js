@@ -34,6 +34,28 @@ function reducer (prevState = initialState, action) {
     return newState;
   }
 
+  // fetchArticlesByTopic
+  if (action.type === types.FETCH_ARTICLES_BY_TOPIC_REQUESTS) {
+    const newState = Object.assign({}, prevState);
+    newState.loading = true;
+    return newState;
+  }
+
+  if (action.type === types.FETCH_ARTICLES_BY_TOPIC_SUCCESS) {
+    const newState = Object.assign({}, prevState);
+    newState.articles = action.payload;
+    newState.loading = false;
+    return newState;
+  }
+
+  if (action.type === types.FETCH_ARTICLES_BY_TOPIC_ERROR) {
+    const newState = Object.assign({}, prevState);
+    newState.articles = [];
+    newState.loading = false;
+    newState.error = action.error;
+    return newState;
+  }
+
   // fetchArticlesByID
   if (action.type === types.FETCH_ARTICLES_BY_ID_REQUESTS) {
     const newState = Object.assign({}, prevState);
@@ -81,7 +103,7 @@ function reducer (prevState = initialState, action) {
     return newState;
   }
 
-// addCommentsByArticleID
+  // addCommentsByArticleID
   if (action.type === types.ADD_COMMENTS_BY_ARTICLE_ID_POST) {
     const newState = Object.assign({}, prevState);
     newState.loading = true;
@@ -105,45 +127,45 @@ function reducer (prevState = initialState, action) {
     return newState;
   }
 
-// articleVoteUp
-    if (action.type === types.ARTICLE_VOTE_UP_REQUEST) {
-      const newState = Object.assign({}, prevState);
-      newState.loading = true;
-      return newState;
-    }
+  // articleVoteUp
+  if (action.type === types.ARTICLE_VOTE_UP_REQUEST) {
+    const newState = Object.assign({}, prevState);
+    newState.loading = true;
+    return newState;
+  }
 
-    if (action.type === types.ARTICLE_VOTE_UP_SUCCESS) {
-      const newState = Object.assign({}, prevState);
-      newState.loading = false;
-      newState.selectedArticle.votes++;
-      return newState;
-    }
+  if (action.type === types.ARTICLE_VOTE_UP_SUCCESS) {
+    const newState = Object.assign({}, prevState);
+    newState.loading = false;
+    newState.selectedArticle.votes++;
+    return newState;
+  }
 
-    if (action.type === types.ARTICLE_VOTE_UP_ERROR) {
-      const newState = Object.assign({}, prevState);
-      newState.error = action.error;
-      return newState;
-    }
+  if (action.type === types.ARTICLE_VOTE_UP_ERROR) {
+    const newState = Object.assign({}, prevState);
+    newState.error = action.error;
+    return newState;
+  }
 
-// articleVoteDown
-    if (action.type === types.ARTICLE_VOTE_DOWN_REQUEST) {
-      const newState = Object.assign({}, prevState);
-      newState.loading = true;
-      return newState;
-    }
+  // articleVoteDown
+  if (action.type === types.ARTICLE_VOTE_DOWN_REQUEST) {
+    const newState = Object.assign({}, prevState);
+    newState.loading = true;
+    return newState;
+  }
 
-    if (action.type === types.ARTICLE_VOTE_DOWN_SUCCESS) {
-      const newState = Object.assign({}, prevState);
-      newState.loading = false;
-      newState.selectedArticle.votes--;
-      return newState;
-    }
+  if (action.type === types.ARTICLE_VOTE_DOWN_SUCCESS) {
+    const newState = Object.assign({}, prevState);
+    newState.loading = false;
+    newState.selectedArticle.votes--;
+    return newState;
+  }
 
-    if (action.type === types.ARTICLE_VOTE_DOWN_ERROR) {
-      const newState = Object.assign({}, prevState);
-      newState.error = action.error;
-      return newState;
-    }
+  if (action.type === types.ARTICLE_VOTE_DOWN_ERROR) {
+    const newState = Object.assign({}, prevState);
+    newState.error = action.error;
+    return newState;
+  }
 
   return prevState;
 }
