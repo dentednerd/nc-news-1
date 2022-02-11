@@ -19,7 +19,7 @@ class TopicPage extends React.Component {
   render () {
     if (!this.props.articles) return null;
     return (
-      <div className="columns">
+      <main className="columns">
         <div className="column is-three-quarters" id='TopicPage'>
           {this.props.articles.map(article => (
             <ArticleCard
@@ -33,7 +33,7 @@ class TopicPage extends React.Component {
           ))}
         </div>
         <Profile />
-      </div>
+      </main>
     );
   }
 }

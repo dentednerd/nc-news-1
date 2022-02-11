@@ -71,8 +71,14 @@ main.columns {
 
 .profile {
   padding:20px;
-  margin: 10px;
+  margin-bottom: 34px;
   font-size:12px;
+}
+
+@media (min-width: 768px) {
+  .profile {
+    margin-left: 10px;
+  }
 }
 
 /* ArticleCard  */
