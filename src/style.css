@@ -211,3 +211,47 @@ span.vote-count {
   padding:0;
   color:#888;
 }
+
+.about-content {
+  max-width: 768px;
+  padding: 0 14px;
+  margin: 0 auto 56px;
+}
+
+.about-content p {
+  margin-bottom: 14px;
+}
+
+.about-content h2,
+.about-content h3 {
+  margin-bottom: 14px;
+  font-size: 28px;
+}
+
+footer {
+  background: -webkit-radial-gradient(center top, rgba(160, 201, 215, 0.8) 0%, rgba(160, 201, 215, 0) 70%), -webkit-linear-gradient(bottom, #050C54 0%, #354262 9%, #2C3551 48%, #282F44 94%, black 100%);
+  color: white;
+  padding: 1rem;
+  box-shadow: -1px -1px 5px #000;
+}
+
+footer section.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: space-between;
+  gap: 14px;
+}
+
+footer section.wrapper ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer section.wrapper h3,
+footer section.wrapper a {
+  color: white;
+}
